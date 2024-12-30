@@ -1,3 +1,52 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "plugins": [
+    "eslint-plugin-import-helpers",
+    "typescript-sort-keys",
+    "sort-destructure-keys",
+    "react-hooks"
+  ],
+  "rules": {
+    "import-helpers/order-imports": [
+      "error",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "/^react$/",
+          "module",
+          "/^@/",
+          "/^config/",
+          "/^utils/",
+          ["parent", "sibling", "index"]
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
+      }
+    ],
+    "sort-destructure-keys/sort-destructure-keys": [
+      2,
+      {
+        "caseSensitive": false
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-unused-vars": 0,
+    "no-unused-vars": "off",
+    "no-multiple-empty-lines": ["error", { "max": 1 }],
+    "semi": [1, "always"],
+    "quotes": [2, "single", { "avoidEscape": true }],
+    "no-console": "error"
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
 }
