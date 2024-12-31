@@ -1,6 +1,7 @@
 export interface ChatItem {
     name: string;
     id: string;
+    disabled?: boolean;
 }
 
 export interface Chat {

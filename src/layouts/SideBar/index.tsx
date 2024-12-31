@@ -7,6 +7,7 @@ import { FiSend } from 'react-icons/fi';
 
 import { fetchList } from '@/api/chat';
 import { Button } from '@/components/Button';
+import { Tooltip } from '@/components/Tooltip';
 import { Typography } from '@/components/Typography';
 import { useNavigation } from '@/hooks/useNavigation';
 import theme from '@/styles/theme';
@@ -18,10 +19,9 @@ import { addListOfChatsCreated } from './store/chatsStore';
 import { Item, Root, Section, SectionButton, SectionTitle } from './style';
 
 export const SideBar: FC = () => {
-  const { id } = useNavigation();  
+  const { id } = useNavigation();
   const chats = useStore(chatsStore, (state) => state.chats);
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [activeItem, setActiveItem] = useState<string>(id);
 
   const handleCollapse = () => setIsCollapsed(!isCollapsed);
 
@@ -51,7 +51,7 @@ export const SideBar: FC = () => {
       <Header isCollapsed={isCollapsed} handleCollapse={handleCollapse} />
 
       <SectionButton>
-        <Link onClick={() => setActiveItem('')} href="/chat/new">
+        <Link href="/chat/new">
           <Button
             animated
             iconLeft={<FiSend size={20} color={theme.colors.surface} />}
@@ -72,14 +72,28 @@ export const SideBar: FC = () => {
           )}
 
           {section.items.map((item) => (
-            <Link key={item.name} href={`/chat/${item.id}`}>
-              <Item
-                isActive={item.id === activeItem}
-                onClick={() => setActiveItem(item.id)}
-              >
-                {!isCollapsed && <Typography>{item.name}</Typography>}
-              </Item>
-            </Link>
+            <Tooltip
+              disabled={!isCollapsed}
+              key={item.name}
+              text={item.name}
+              tooltipPosition="right"
+            >
+              <Link href={item?.disabled ? '#' : `/chat/${item.id}`}>
+                <Item
+                  isCollapsed={isCollapsed}
+                  disabled={item?.disabled}
+                  isActive={item.id === id}
+                >
+                  <Typography variant={isCollapsed ? 'xsmall' : 'medium'}>
+                    {isCollapsed
+                      ? `${item.name.charAt(0)}${item.name.charAt(
+                          1
+                        )}${item.name.charAt(2)}`
+                      : item.name}
+                  </Typography>
+                </Item>
+              </Link>
+            </Tooltip>
           ))}
         </Section>
       ))}

@@ -5,7 +5,7 @@ export interface Message {
     content: string;
     timestamp: string;
     welcome?: boolean;
-}
+};
 
 export type Response = Message[];
 

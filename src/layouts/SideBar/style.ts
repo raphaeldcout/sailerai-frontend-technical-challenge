@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { ItemProps, RootProps } from './types';
 
@@ -41,7 +41,7 @@ export const Item = styled.div<ItemProps>`
     cursor: pointer;
     display: flex;
     align-items: center;
-    padding: 10px 16px;
+    padding: ${({ isCollapsed }) => (isCollapsed ? '10px' : '10px 16px')};
     font-size: ${({ theme }) => theme.typography.fontSize.md};
     color: ${({ theme }) => theme.colors.surface};
     background-color: ${({ isActive, theme }) => (isActive ? theme.colors.primaryLight : 'transparent')};
@@ -52,4 +52,8 @@ export const Item = styled.div<ItemProps>`
     &:hover {
         background-color: ${({ theme }) => theme.colors.primaryLight};
     }
+
+    ${({ disabled }) => disabled && css`
+        cursor: not-allowed;
+    `}
 `;

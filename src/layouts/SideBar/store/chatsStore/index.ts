@@ -8,9 +8,9 @@ export const chatsStore = new Store<ChatsStoreProps>({
         {
             title: 'Grupos',
             items: [
-                { name: 'Futebol Sábado ⚽', id: 'footbal' },
-                { name: 'Works 🌎', id: 'jobs' },
-                { name: 'Família  + Amigos 🗣️', id: 'family' },
+                { disabled: true, name: 'Futebol Sábado ⚽', id: 'footbal' },
+                { disabled: true, name: 'Works 🌎', id: 'jobs' },
+                { disabled: true, name: 'Família  + Amigos 🗣️', id: 'family' },
             ],
         },
     ]

@@ -25,18 +25,6 @@ export const FormGroup: FC = () => {
           }))
         }
       />
-
-      {/* <TextInput
-        id="participant-2"
-        label="Nome do segundo participante"
-        value={secondParticipantInputValue}
-        onChange={(e) =>
-          formGroupStore.setState((prev) => ({
-            ...prev,
-            secondParticipantInputValue: e.target.value,
-          }))
-        }
-      /> */}
     </Root>
   );
 };

@@ -20,7 +20,7 @@ export default function ChatDynamic() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [disabledActions, setDisabledActions] = useState(true);
   const socketRef = useRef<WebSocket | null>(null);
-  const [status, setStatus] = useState<PresenceUpdated['status']>('online');
+  const [status, setStatus] = useState<PresenceUpdated['status']>();
 
   const name = useMemo(
     () => chatsCreated[0].items.find((chat) => chat.id === id)?.name || '',

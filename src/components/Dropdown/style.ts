@@ -6,7 +6,7 @@ import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 export { DropdownMenu };
 
 export const DropdownButtonTrigger = styled.button`
-    all: unset;
+  all: unset;
 `;
 
 export const DropdownMenuContent = styled(DropdownMenu.Content)`

@@ -6,7 +6,7 @@ export const DELAY_TIMER = 3000;
 
 export const sailerWelcome: Message[] = [
     {
-        id: 1,
+        id: '1',
         user_id: 'admin',
         content: 'Bem-vindo! 🎉 Estamos animados por tê-lo aqui.',
         timestamp: startDate.toISOString(),
@@ -14,7 +14,7 @@ export const sailerWelcome: Message[] = [
         welcome: true
     },
     {
-        id: 2,
+        id: '2',
         user_id: 'admin',
         content:
             'Que tal iniciar uma conversa com seus amigos agora mesmo clicando no botão "Iniciar uma conversa" no Menu ao lado.',
@@ -23,7 +23,7 @@ export const sailerWelcome: Message[] = [
         welcome: true
     },
     {
-        id: 3,
+        id: '3',
         user_id: 'admin',
         content:
             'Aproveite para desfrutar tudo o que a plataforma pode te oferecer. Ah, não se esqueça que estamos aqui para te ajudar, basta chamar 😉',

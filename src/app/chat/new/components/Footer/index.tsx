@@ -51,7 +51,7 @@ export const Footer: FC = () => {
       <Button
         iconRight={<FiEdit size={20} color={theme.colors.surface} />}
         label="Criar"
-        disabled={loadingCreateNewChat}
+        disabled={loadingCreateNewChat || !firstParticipantInputValue.trim()}
         loading={loadingCreateNewChat}
         onClick={handleCreateNewChat}
       />

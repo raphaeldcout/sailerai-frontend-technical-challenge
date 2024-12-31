@@ -4,4 +4,6 @@ export interface RootProps  {
 
 export interface ItemProps {
     isActive?: boolean;
+    disabled?: boolean;
+    isCollapsed?: boolean;
 }

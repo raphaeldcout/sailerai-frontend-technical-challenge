@@ -11,7 +11,7 @@ import { Wrapper } from './style';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Sailer AI - Chat',
+  title: 'Sailer AI - Technical Challenge',
   description: 'Created by: Raphael Melo',
 };
 
