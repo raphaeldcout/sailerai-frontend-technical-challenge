@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should match snapshot only label 1`] = `
+<div>
+  <button
+    class="sc-dbef9764-0 hSiXXX"
+    color="successLight"
+    data-testid="root-button"
+  >
+    <p
+      class="sc-dc096805-0 fZKqTq"
+      color="surface"
+      data-testid="root-button-label"
+      variant="medium"
+      weight="medium"
+    >
+      Botão
+    </p>
+    <span
+      class="sc-dbef9764-1 gOepMG"
+      data-testid="root-button-loading"
+    >
+      <svg
+        class="sc-dbef9764-2 jAnwkV"
+        color="#f5f5f5"
+        fill="none"
+        height="20"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color: rgb(245, 245, 245);"
+        viewBox="0 0 24 24"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <polyline
+          points="23 4 23 10 17 10"
+        />
+        <path
+          d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"
+        />
+      </svg>
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Button should match snapshot with icons 1`] = `
+<div>
+  <button
+    class="sc-dbef9764-0 hSiXXX"
+    color="successLight"
+    data-testid="root-button"
+  >
+    <span
+      class="sc-dbef9764-1 gOepMG"
+      data-testid="root-button-icon-left"
+    >
+      <svg
+        color="#f5f5f5"
+        fill="none"
+        height="20"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color: rgb(245, 245, 245);"
+        viewBox="0 0 24 24"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+        />
+        <path
+          d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+        />
+      </svg>
+    </span>
+    <p
+      class="sc-dc096805-0 fZKqTq"
+      color="surface"
+      data-testid="root-button-label"
+      variant="medium"
+      weight="medium"
+    >
+      Botão
+    </p>
+    <span
+      class="sc-dbef9764-1 gOepMG"
+      data-testid="root-button-icon-right"
+    >
+      <svg
+        color="#f5f5f5"
+        fill="none"
+        height="20"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color: rgb(245, 245, 245);"
+        viewBox="0 0 24 24"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="22"
+          x2="11"
+          y1="2"
+          y2="13"
+        />
+        <polygon
+          points="22 2 15 22 11 13 2 9 22 2"
+        />
+      </svg>
+    </span>
+  </button>
+</div>
+`;

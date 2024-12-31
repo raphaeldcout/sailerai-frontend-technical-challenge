@@ -18,17 +18,28 @@ export const Button: FC<Props> = ({
   responsiveMode = false,
 }) => (
   <ButtonStyled
+    data-testid="root-button"
     color={color}
     disabled={disabled}
     animated={animated}
     responsiveMode={responsiveMode}
     onClick={onClick}
   >
-    {iconLeft && <IconWrapper>{iconLeft}</IconWrapper>}
-    {!responsiveMode && <Typography weight="medium">{label}</Typography>}
-    {iconRight && !loading && <IconWrapper>{iconRight}</IconWrapper>}
+    {iconLeft && (
+      <IconWrapper data-testid="root-button-icon-left">{iconLeft}</IconWrapper>
+    )}
+    {!responsiveMode && (
+      <Typography data-testid="root-button-label" weight="medium">
+        {label}
+      </Typography>
+    )}
+    {iconRight && !loading && (
+      <IconWrapper data-testid="root-button-icon-right">
+        {iconRight}
+      </IconWrapper>
+    )}
     {loading && (
-      <IconWrapper>
+      <IconWrapper data-testid="root-button-loading">
         <LoaderIcon size={20} color={theme.colors.surface} />
       </IconWrapper>
     )}

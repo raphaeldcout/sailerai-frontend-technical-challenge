@@ -13,7 +13,12 @@ export const AnimatedRecording: FC<Props> = ({
     {Array(quantity)
       .fill(null)
       .map((_, index) => (
-        <Wave key={index} color={color} quantity={quantity} />
+        <Wave
+          data-testid="root-recording-wave"
+          key={index}
+          color={color}
+          quantity={quantity}
+        />
       ))}
   </RecordingContainer>
 );

@@ -11,16 +11,24 @@ export const MessageBubble: FC<Props> = ({ date, isUser = false, text, type }) =
   <BubbleContainer isUser={isUser}>
     <Bubble isUser={isUser}>
       {type === 'text' && (
-        <MessageText>
+        <MessageText data-testid="root-message-bubble-text">
           <Typography variant="small" color="background">
             {text}
           </Typography>
         </MessageText>
       )}
 
-      {type === 'image' && <Avatar src={text} alt={text} />}
+      {type === 'image' && (
+        <Avatar data-testid="root-message-bubble-image" src={text} alt={text} />
+      )}
 
-      {type === 'audio' && <AudioPlayer minWidth={300} src={text} />}
+      {type === 'audio' && (
+        <AudioPlayer
+          data-testid="root-message-bubble-audio"
+          minWidth={300}
+          src={text}
+        />
+      )}
 
       <MessageDate>
         <Typography variant="xsmall" color="neutralLowDark" weight="medium">

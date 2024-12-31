@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Typography should match snapshot 1`] = `
+<div>
+  <p
+    class="sc-dc096805-0 lbvuzb"
+    color="surface"
+    variant="medium"
+    weight="regular"
+  >
+    Lorem ipsum is typically.
+  </p>
+</div>
+`;

@@ -47,15 +47,15 @@ export const waveAnimation = keyframes`
 export const pulse = keyframes`
   0% {
     transform: scale(1);
-    box-shadow: 0 0 0 rgba(46, 178, 110, 0.2);
+    box-shadow: 0 0 0 ${({ theme }) => theme.colors.rbg.greenLowMedium};
   }
   50% {
     transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(46, 178, 110, 0.3);
+    box-shadow: 0 0 15px ${({ theme }) => theme.colors.rbg.greenLowDark};
   }
   100% {
     transform: scale(1);
-    box-shadow: 0 0 0 rgba(46, 178, 110, 0.2);
+    box-shadow: 0 0 0 ${({ theme }) => theme.colors.rbg.greenLowMedium};
   }
 `;
 

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AnimatedDots should match snapshot 1`] = `
+<div>
+  <span
+    class="sc-edd19f8c-0 hTklem"
+  />
+</div>
+`;

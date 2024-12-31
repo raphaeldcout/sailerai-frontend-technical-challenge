@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MessageBubble should match snapshot with audio type 1`] = `
+<div>
+  <div
+    class="sc-8f28b1d3-0 blGZHF"
+  >
+    <div
+      class="sc-8f28b1d3-1 idusP"
+    >
+      <div
+        class="sc-478098d3-0 fNgPnG"
+        data-testid="root-message-bubble-audio"
+        minwidth="300"
+      >
+        <audio
+          class="sc-478098d3-1"
+          controls=""
+          src="https://cdn.pixabay.com/audio/2021/08/09/audio_2f331550f9.mp3"
+        >
+          <p
+            class="sc-dc096805-0 lbvuzb"
+            color="surface"
+            variant="medium"
+            weight="regular"
+          >
+            Seu navegador não suporta o elemento de áudio.
+          </p>
+        </audio>
+      </div>
+      <div
+        class="sc-8f28b1d3-3 loNuRg"
+      >
+        <p
+          class="sc-dc096805-0 dygNxS"
+          color="neutralLowDark"
+          variant="xsmall"
+          weight="medium"
+        >
+          00:00
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MessageBubble should match snapshot with image type 1`] = `
+<div>
+  <div
+    class="sc-8f28b1d3-0 kjYXhW"
+  >
+    <div
+      class="sc-8f28b1d3-1 jRifpv"
+    >
+      <figure
+        class="sc-4d7894f7-0 eBJhVm"
+        data-testid="root-message-bubble-image"
+      >
+        <img
+          alt="https://picsum.photos/id/2/5000/3333"
+          class="sc-4d7894f7-1 fqwDfh"
+          data-nimg="fill"
+          decoding="async"
+          loading="lazy"
+          sizes="100vw"
+          src="/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fid%2F2%2F5000%2F3333&w=3840&q=75"
+          srcset="/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fid%2F2%2F5000%2F3333&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fpicsum.photos%2Fid%2F2%2F5000%2F3333&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fpicsum.photos%2Fid%2F2%2F5000%2F3333&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fpicsum.photos%2Fid%2F2%2F5000%2F3333&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fpicsum.photos%2Fid%2F2%2F5000%2F3333&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fpicsum.photos%2Fid%2F2%2F5000%2F3333&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fpicsum.photos%2Fid%2F2%2F5000%2F3333&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fpicsum.photos%2Fid%2F2%2F5000%2F3333&w=3840&q=75 3840w"
+          style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; object-fit: cover; color: transparent;"
+        />
+      </figure>
+      <div
+        class="sc-8f28b1d3-3 loNuRg"
+      >
+        <p
+          class="sc-dc096805-0 dygNxS"
+          color="neutralLowDark"
+          variant="xsmall"
+          weight="medium"
+        >
+          00:00
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MessageBubble should match snapshot with text type 1`] = `
+<div>
+  <div
+    class="sc-8f28b1d3-0 blGZHF"
+  >
+    <div
+      class="sc-8f28b1d3-1 idusP"
+    >
+      <div
+        class="sc-8f28b1d3-2 hNzVhC"
+        data-testid="root-message-bubble-text"
+      >
+        <p
+          class="sc-dc096805-0 fIfidO"
+          color="background"
+          variant="small"
+          weight="regular"
+        >
+          Lorem ipsum is typically.
+        </p>
+      </div>
+      <div
+        class="sc-8f28b1d3-3 loNuRg"
+      >
+        <p
+          class="sc-dc096805-0 dygNxS"
+          color="neutralLowDark"
+          variant="xsmall"
+          weight="medium"
+        >
+          00:00
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

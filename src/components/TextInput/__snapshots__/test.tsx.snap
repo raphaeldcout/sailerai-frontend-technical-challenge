@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInput should match snapshot 1`] = `
+<div>
+  <div
+    class="sc-dc7a9aa4-0 iNLJyx"
+  >
+    <input
+      class="sc-dc7a9aa4-2 iomJIg"
+      id="text-input"
+      placeholder=" "
+      value=""
+    />
+    <label
+      class="sc-dc7a9aa4-1 koBPAR"
+      for="text-input"
+    >
+      Label
+    </label>
+  </div>
+</div>
+`;

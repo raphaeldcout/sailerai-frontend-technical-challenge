@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AlertResponsive should match snapshot 1`] = `
+<div>
+  <article
+    class="sc-188ab47b-0 dcYpvv"
+  >
+    <svg
+      color="#fbc02d"
+      fill="none"
+      height="50"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      style="color: rgb(251, 192, 45);"
+      viewBox="0 0 24 24"
+      width="50"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+      />
+      <line
+        x1="12"
+        x2="12"
+        y1="9"
+        y2="13"
+      />
+      <line
+        x1="12"
+        x2="12.01"
+        y1="17"
+        y2="17"
+      />
+    </svg>
+    <p
+      class="sc-dc096805-0 lbvuzb"
+      color="surface"
+      variant="medium"
+      weight="regular"
+    >
+      A versão atual da plataforma é compatível apenas com dispositivos de tela grande.
+    </p>
+  </article>
+</div>
+`;

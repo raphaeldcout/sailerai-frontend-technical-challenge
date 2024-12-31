@@ -20,7 +20,8 @@ const theme = {
         neutralMedium: '#495057',
         greenLowLight: '#dcf6c6',
         rbg: {
-            greenLowMedium: 'rgb(46, 178, 110)'
+            greenLowMedium: 'rgba(46, 178, 110, 0.2)',
+            greenLowDark: 'rgba(46, 178, 110, 0.3)',
         }
     },
     darkMode: {

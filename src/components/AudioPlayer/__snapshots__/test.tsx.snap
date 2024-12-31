@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AudioPlayer should match snapshot 1`] = `
+<div>
+  <div
+    class="sc-478098d3-0 NIKnl"
+  >
+    <audio
+      class="sc-478098d3-1"
+      controls=""
+      src="https://cdn.pixabay.com/audio/2021/08/09/audio_2f331550f9.mp3"
+    >
+      <p
+        class="sc-dc096805-0 lbvuzb"
+        color="surface"
+        variant="medium"
+        weight="regular"
+      >
+        Seu navegador não suporta o elemento de áudio.
+      </p>
+    </audio>
+  </div>
+</div>
+`;

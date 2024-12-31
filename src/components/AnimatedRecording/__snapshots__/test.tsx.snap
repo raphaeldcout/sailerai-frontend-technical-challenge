@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AnimatedRecording should match snapshot 1`] = `
+<div>
+  <div
+    class="sc-6bc181fa-0 kpKwOb"
+  >
+    <div
+      class="sc-6bc181fa-1 dsCirH"
+      color="surface"
+      data-testid="root-recording-wave"
+      quantity="5"
+    />
+    <div
+      class="sc-6bc181fa-1 dsCirH"
+      color="surface"
+      data-testid="root-recording-wave"
+      quantity="5"
+    />
+    <div
+      class="sc-6bc181fa-1 dsCirH"
+      color="surface"
+      data-testid="root-recording-wave"
+      quantity="5"
+    />
+    <div
+      class="sc-6bc181fa-1 dsCirH"
+      color="surface"
+      data-testid="root-recording-wave"
+      quantity="5"
+    />
+    <div
+      class="sc-6bc181fa-1 dsCirH"
+      color="surface"
+      data-testid="root-recording-wave"
+      quantity="5"
+    />
+  </div>
+</div>
+`;

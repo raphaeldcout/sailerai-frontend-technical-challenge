@@ -10,10 +10,8 @@ export const Typography: FC<Props> = ({
   variant = 'medium',
   weight = 'regular',
   ...props
-}) => {
-  return (
-    <Root as={as} variant={variant} weight={weight} color={color} {...props}>
-      {children}
-    </Root>
-  );
-};
+}) => (
+  <Root as={as} variant={variant} weight={weight} color={color} {...props}>
+    {children}
+  </Root>
+);

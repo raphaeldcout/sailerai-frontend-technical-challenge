@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonIcon should match snapshot 1`] = `
+<div>
+  <button
+    backgrouncolor="primaryLight"
+    class="sc-95866428-0 kXqgKZ"
+  >
+    <svg
+      color="#d32f2f"
+      fill="none"
+      height="20"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      style="color: rgb(211, 47, 47);"
+      viewBox="0 0 24 24"
+      width="20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <line
+        x1="22"
+        x2="11"
+        y1="2"
+        y2="13"
+      />
+      <polygon
+        points="22 2 15 22 11 13 2 9 22 2"
+      />
+    </svg>
+  </button>
+</div>
+`;
