@@ -23,6 +23,9 @@ const theme = {
         neutralLowMedium: '#f1f1f1',
         neutralLowDark: '#c4c4c4',
 
+        neutralMediumLight: '#6c757d',
+        neutralMedium: '#495057',
+
         greenLowLight: '#dcf6c6'
     },
     darkMode: {

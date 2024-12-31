@@ -1,7 +1,8 @@
-import { TextareaHTMLAttributes } from 'react';
-
-export interface OwnProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
-    
-}
+export interface OwnProps {
+  id: string;
+  label: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};
 
 export type Props = OwnProps;

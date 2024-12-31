@@ -1,1 +1,0 @@
-export { textInputStore } from './textInputStore';

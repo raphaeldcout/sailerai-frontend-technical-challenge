@@ -1,17 +1,8 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
+
+import { fadeUp } from '@/styles/keyframes';
 
 import { BubbleStyledProps } from './types';
-
-const fadeUp = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
 
 export const BubbleContainer = styled.div<BubbleStyledProps>`
     width: 100%;

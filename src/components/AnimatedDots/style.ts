@@ -1,19 +1,6 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
-const typingDots = keyframes`
-  0% {
-    content: '';
-  }
-  20% {
-    content: '.';
-  }
-  50% {
-    content: '..';
-  }
-  80% {
-    content: '...';
-  }
-`;
+import { typingDots } from '@/styles/keyframes';
 
 export const AnimatedDotsStyled = styled.span`
   &::after {

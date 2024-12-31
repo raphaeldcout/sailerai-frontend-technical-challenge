@@ -1,18 +1,34 @@
 import { FC } from 'react';
 
 import { Typography } from '@/components/Typography';
+import theme from '@/styles/theme';
 
-import { ButtonStyled, IconWrapper } from './style';
+import { ButtonStyled, IconWrapper, LoaderIcon } from './style';
 import { Props } from './types';
 
 export const Button: FC<Props> = ({
-  icon,
+  animated = false,
+  disabled,
+  iconLeft,
+  iconRight,
   label,
+  loading,
   onClick,
   responsiveMode = false,
 }) => (
-  <ButtonStyled responsiveMode={responsiveMode} onClick={onClick}>
-    <IconWrapper>{icon}</IconWrapper>
+  <ButtonStyled
+    disabled={disabled}
+    animated={animated}
+    responsiveMode={responsiveMode}
+    onClick={onClick}
+  >
+    {iconLeft && <IconWrapper>{iconLeft}</IconWrapper>}
     {!responsiveMode && <Typography weight="medium">{label}</Typography>}
+    {iconRight && !loading && <IconWrapper>{iconRight}</IconWrapper>}
+    {loading && (
+      <IconWrapper>
+        <LoaderIcon size={20} color={theme.colors.surface} />
+      </IconWrapper>
+    )}
   </ButtonStyled>
 );

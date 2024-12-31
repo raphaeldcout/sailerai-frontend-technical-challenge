@@ -2,7 +2,7 @@ const startDate = new Date();
 
 import { Message } from '@/layouts/Chat/components/Messages/types';
 
-export const DELAY_TIMER = 5000;
+export const DELAY_TIMER = 3000;
 
 export const sailerWelcome: Message[] = [
     {

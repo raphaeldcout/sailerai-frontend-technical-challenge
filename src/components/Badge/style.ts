@@ -19,7 +19,7 @@ const getBackgroundColor = (theme: DefaultTheme, color: BadgeColor) => {
     }
 };
 
-export const Root = styled.div<OwnProps>`
+export const Root = styled.span<OwnProps>`
     display: inline-block;
     align-items: center;
     justify-content: center;

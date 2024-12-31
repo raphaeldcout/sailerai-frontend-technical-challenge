@@ -11,6 +11,10 @@ export const Messages: FC<Props> = ({ messages }) => {
   const messageEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    /*
+      This "useEffect" is used to scroll down the screen until the last message sent is visible.
+    */
+
     if (messageEndRef.current) {
       messageEndRef.current.scrollIntoView({ behavior: 'smooth' });
     }

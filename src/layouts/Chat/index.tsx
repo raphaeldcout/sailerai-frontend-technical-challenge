@@ -1,47 +1,25 @@
-'use client';
-
-import { FC, useEffect } from 'react';
-
-import { DELAY_TIMER, sailerWelcome } from '@/utils/chat/sailerWelcome';
+import { FC } from 'react';
 
 import { Footer, Header, Messages } from './components';
-import { useBotSailerMessage } from './hooks/useBotSailerMessage';
 import { Root } from './style';
+import { Props } from './types';
 
-export const Chat: FC = () => {
-  const {
-    addMessageWithoutDuplication,
-    initialLoderMessagesDone,
-    sailerMessages,
-  } = useBotSailerMessage();
-
-  useEffect(() => {
-    let timerIds: NodeJS.Timeout[] = [];
-
-    sailerWelcome.forEach((message, index) => {
-      const timerId = setTimeout(() => {
-        addMessageWithoutDuplication(message);
-      }, index * DELAY_TIMER);
-
-      timerIds.push(timerId);
-    });
-
-    return () => {
-      timerIds.forEach((timerId) => clearTimeout(timerId));
-    };
-  }, [addMessageWithoutDuplication]);
-
+export const Chat: FC<Props> = ({
+  disabledActions,
+  handleSendMessage,
+  messages,
+  name,
+  status,
+  typing,
+}) => {
   return (
     <Root>
-      <Header
-        name="Sailer AI - Welcome"
-        typing={!initialLoderMessagesDone}
-        status="online"
+      <Header name={name} typing={typing} status={status} />
+      <Messages messages={messages} />
+      <Footer
+        handleSendMessage={handleSendMessage}
+        disabledActions={disabledActions}
       />
-
-      <Messages messages={sailerMessages} />
-
-      <Footer />
     </Root>
   );
 };

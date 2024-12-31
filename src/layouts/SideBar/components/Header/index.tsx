@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import Link from 'next/link';
 import { FiEdit, FiMaximize2, FiMenu } from 'react-icons/fi';
 
 import { ButtonIcon } from '@/components/ButtonIcon';
@@ -15,13 +16,11 @@ export const Header: FC<Props> = ({ handleCollapse, isCollapsed }) => {
     <Root isCollapsed={isCollapsed}>
       <Tooltip text="Nova conversa" tooltipPosition="right">
         <TooltipContent>
-          <ButtonIcon
-            onClick={() => {
-              // TODO: Add event to create new chat.
-            }}
-          >
-            <FiEdit size={20} color={theme.colors.surface} />
-          </ButtonIcon>
+          <Link href="/chat/new">
+            <ButtonIcon>
+              <FiEdit size={20} color={theme.colors.surface} />
+            </ButtonIcon>
+          </Link>
         </TooltipContent>
       </Tooltip>
 

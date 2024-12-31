@@ -5,7 +5,7 @@ import {
   useCallback,
   useMemo,
   useRef,
-  useState,
+  useState
 } from 'react';
 
 import {
@@ -20,11 +20,9 @@ import { AnimatedRecording } from '@/components/AnimatedRecording';
 import { AudioPlayer } from '@/components/AudioPlayer';
 import { Avatar } from '@/components/Avatar';
 import { ButtonIcon } from '@/components/ButtonIcon';
-import { TextInput } from '@/components/TextInput';
-import { useTextInput } from '@/components/TextInput/hooks/useTextInput';
+import { TextArea } from '@/components/TextArea';
 import { Tooltip } from '@/components/Tooltip';
 import { TooltipContent } from '@/components/Tooltip/styles';
-import { useBotSailerMessage } from '@/layouts/Chat/hooks/useBotSailerMessage';
 import theme from '@/styles/theme';
 
 import {
@@ -34,17 +32,19 @@ import {
   WrapperArea,
   WrapperImagesAttached
 } from './style';
-import { HandleSendMessage } from './types';
+import { Props } from './types';
 
-export const Footer: FC = () => {
+export const Footer: FC<Props> = ({
+  disabledActions,
+  handleSendMessage
+}) => {
   const [images, setImages] = useState<string[]>([]);
-  const { addMessage, initialLoderMessagesDone } = useBotSailerMessage();
-  const { handleInputChange, value: textInputValue } = useTextInput();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isRecording, setIsRecording] = useState(false);
   const [audioSrc, setAudioSrc] = useState<string | null>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
+  const [textInputValue, setInputTextValue] = useState('');
 
   const thereAreImagesAttached = !!images.length;
 
@@ -75,21 +75,9 @@ export const Footer: FC = () => {
     setIsRecording(false);
   }, []);
 
-  const handleSendMessage = useCallback(
-    ({ content, type }: HandleSendMessage) => {
-      addMessage({
-        id: new Date().getTime(),
-        user_id: 'owner',
-        type,
-        content,
-        timestamp: new Date().toISOString(),
-      });
-      handleInputChange('');
-    },
-    [addMessage, handleInputChange]
-  );
-
   const handleSend = useCallback(() => {
+    setInputTextValue('');
+    
     if (thereAreImagesAttached) {
       handleSendMessage({ content: images[0], type: 'image' });
       clearInputImages();
@@ -203,9 +191,11 @@ export const Footer: FC = () => {
         )}
 
         {showTextInputContent && (
-          <TextInput
-            disabled={!initialLoderMessagesDone}
+          <TextArea
+            value={textInputValue}
+            disabled={!disabledActions}
             onKeyDown={(e) => handleKeyDown(e)}
+            handleInputChange={setInputTextValue}
           />
         )}
 
@@ -227,7 +217,7 @@ export const Footer: FC = () => {
                     if (thereAreImagesAttached) return clearInputImages();
                     if (audioSrc) return clearInputAudio();
                   }}
-                  disabled={!initialLoderMessagesDone}
+                  disabled={!disabledActions}
                 >
                   <FiTrash2 size={20} color={theme.colors.surface} />
                 </ButtonIcon>
@@ -238,7 +228,7 @@ export const Footer: FC = () => {
               <TooltipContent>
                 <ButtonIcon
                   onClick={handleButtonClick}
-                  disabled={!initialLoderMessagesDone}
+                  disabled={!disabledActions}
                 >
                   <HiddenInput
                     ref={fileInputRef}
@@ -257,10 +247,7 @@ export const Footer: FC = () => {
           {canSendMessage ? (
             <Tooltip text="Enviar" tooltipPosition="top">
               <TooltipContent>
-                <ButtonIcon
-                  onClick={handleSend}
-                  disabled={!initialLoderMessagesDone}
-                >
+                <ButtonIcon onClick={handleSend} disabled={!disabledActions}>
                   <FiSend size={20} color={theme.colors.surface} />
                 </ButtonIcon>
               </TooltipContent>
@@ -275,7 +262,7 @@ export const Footer: FC = () => {
                   onClick={
                     isRecording ? handleStopRecording : handleStartRecording
                   }
-                  disabled={!initialLoderMessagesDone}
+                  disabled={!disabledActions}
                 >
                   {isRecording ? (
                     <FiStopCircle size={20} color={theme.colors.surface} />

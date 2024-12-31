@@ -1,48 +1,67 @@
 'use client';
 
-import { FC, useState } from 'react';
+import { FC, useCallback, useEffect, useState } from 'react';
 
+import Link from 'next/link';
 import { FiSend } from 'react-icons/fi';
 
+import { fetchList } from '@/api/chat';
 import { Button } from '@/components/Button';
 import { Typography } from '@/components/Typography';
+import { useNavigation } from '@/hooks/useNavigation';
 import theme from '@/styles/theme';
+import { useStore } from '@tanstack/react-store';
 
 import { Footer, Header } from './components';
-import {
-  Item,
-  Root,
-  Section,
-  SectionButton,
-  SectionTitle,
-} from './style';
-
-const sections = [
-  {
-    title: 'Grupos',
-    items: ['Futebol Sábado ⚽', 'Works 🌎', 'Família  + Amigos 🗣️'],
-  },
-];
+import { chatsStore } from './store';
+import { addListOfChatsCreated } from './store/chatsStore';
+import { Item, Root, Section, SectionButton, SectionTitle } from './style';
 
 export const SideBar: FC = () => {
+  const { id } = useNavigation();  
+  const chats = useStore(chatsStore, (state) => state.chats);
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [activeItem, setActiveItem] = useState<string>('');
+  const [activeItem, setActiveItem] = useState<string>(id);
 
   const handleCollapse = () => setIsCollapsed(!isCollapsed);
+
+  const getCreatedChats = useCallback(async () => {
+    try {
+      const chatsCreated = await fetchList();
+
+      addListOfChatsCreated(
+        chatsCreated.map((chat) => ({
+          name: chat.participants[0],
+          id: chat.chat_id,
+        }))
+      );
+    } catch (_) {}
+  }, []);
+
+  useEffect(() => {
+    /*
+      This "useEffect" is used to fecth list of the all chat created.
+    */
+
+    getCreatedChats();
+  }, [getCreatedChats]);
 
   return (
     <Root isCollapsed={isCollapsed}>
       <Header isCollapsed={isCollapsed} handleCollapse={handleCollapse} />
 
       <SectionButton>
-        <Button
-          icon={<FiSend size={20} color={theme.colors.surface} />}
-          label="Iniciar uma conversa"
-          responsiveMode={isCollapsed}
-        />
+        <Link onClick={() => setActiveItem('')} href="/chat/new">
+          <Button
+            animated
+            iconLeft={<FiSend size={20} color={theme.colors.surface} />}
+            label="Iniciar uma conversa"
+            responsiveMode={isCollapsed}
+          />
+        </Link>
       </SectionButton>
 
-      {sections.map((section, index) => (
+      {chats.map((section, index) => (
         <Section key={index}>
           {section.title && (
             <SectionTitle isCollapsed={isCollapsed}>
@@ -53,13 +72,14 @@ export const SideBar: FC = () => {
           )}
 
           {section.items.map((item) => (
-            <Item
-              key={item}
-              isActive={item === activeItem}
-              onClick={() => setActiveItem(item)}
-            >
-              {!isCollapsed && <Typography>{item}</Typography>}
-            </Item>
+            <Link key={item.name} href={`/chat/${item.id}`}>
+              <Item
+                isActive={item.id === activeItem}
+                onClick={() => setActiveItem(item.id)}
+              >
+                {!isCollapsed && <Typography>{item.name}</Typography>}
+              </Item>
+            </Link>
           ))}
         </Section>
       ))}

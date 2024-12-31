@@ -1,11 +1,6 @@
-export interface Message {
-    id: number;
-    user_id: string;
-    type: 'text' | 'audio' | 'image';
-    content: string;
-    timestamp: string;
-    welcome?: boolean;
-}
+import { Message } from '@/api/chat/fetchById/types';
+
+export type { Message };
 
 export interface OwnProps {
     messages: Message[];

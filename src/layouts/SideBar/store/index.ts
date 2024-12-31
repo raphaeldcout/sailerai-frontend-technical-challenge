@@ -1,0 +1,2 @@
+export { chatsStore } from './chatsStore';
+

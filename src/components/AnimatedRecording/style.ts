@@ -1,13 +1,6 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
-export const waveAnimation = keyframes`
-  0%, 100% {
-    transform: scaleY(1);
-  }
-  50% {
-    transform: scaleY(1.5);
-  }
-`;
+import { waveAnimation } from '@/styles/keyframes';
 
 export const RecordingContainer = styled.div`
   display: flex;

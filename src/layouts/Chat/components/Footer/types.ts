@@ -4,3 +4,10 @@ export interface HandleSendMessage {
     type: Message['type'];
     content: Message['content'];
 }
+
+export interface OwnProps {
+    handleSendMessage: (props: HandleSendMessage) => void;
+    disabledActions: boolean;
+};
+
+export type Props = OwnProps;
