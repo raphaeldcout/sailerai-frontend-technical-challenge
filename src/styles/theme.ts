@@ -87,6 +87,13 @@ const theme = {
         modal: 1100,
         tooltip: 1200,
     },
+    breakpoints: {
+        xsmall: 575.98,
+        small: 767.98,
+        medium: 991.98,
+        large: 1199.98,
+        xlarge: 1399.98
+    }
 };
 
 export type Theme = typeof theme;

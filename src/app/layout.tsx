@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
+import { AlertResponsive } from '@/components/AlertResponsive';
 import Initialization from '@/layouts/Initialization';
 import { NavBar } from '@/layouts/NavBar';
 import { SideBar } from '@/layouts/SideBar';
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Initialization>
           <GlobalStyles />
+          <AlertResponsive />
           <SideBar />
           <Wrapper>
             <NavBar />
