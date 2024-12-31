@@ -84,7 +84,7 @@ export const SideBar: FC = () => {
                   disabled={item?.disabled}
                   isActive={item.id === id}
                 >
-                  <Typography variant={isCollapsed ? 'xsmall' : 'medium'}>
+                  <Typography textOverflow variant={isCollapsed ? 'xsmall' : 'medium'}>
                     {isCollapsed
                       ? `${item.name.charAt(0)}${item.name.charAt(
                           1
