@@ -14,4 +14,5 @@ export const Flexbox = styled.div<FlexboxProps>`
     ${({ flex }) => flex && css({ flex })};
     ${({ gap }) => gap && css({ gap })};
     ${({ maxWidth }) => maxWidth && css({ maxWidth })};
+    ${({ minWidth }) => minWidth && css({ minWidth })};
   `;

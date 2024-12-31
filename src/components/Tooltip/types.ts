@@ -8,9 +8,13 @@ export interface TooltipProps {
   disabled?: boolean
 };
 
-export type TooltipPositionVariants = 'bottom' | 'top' | 'left' | 'right';
+export const TooltipPositionVariant = ['bottom', 'top', 'left', 'right'] as const;
 
-export type TooltipArrowPositionVariants = 'left' | 'right' | 'center';
+export type TooltipPositionVariants = (typeof TooltipPositionVariant)[number];
+
+export const TooltipArrowPositionVariant = ['left', 'right', 'center'] as const;
+
+export type TooltipArrowPositionVariants = (typeof TooltipArrowPositionVariant)[number];
 
 export interface TooltipStyledProps {
   tooltipPosition: TooltipPositionVariants;

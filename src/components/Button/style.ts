@@ -1,3 +1,4 @@
+import { darken } from 'polished';
 import { FiRotateCw } from 'react-icons/fi';
 import styled, { css } from 'styled-components';
 
@@ -11,7 +12,7 @@ export const ButtonStyled = styled.button<ButtonStyledProps>`
   align-items: center;
   justify-content: center;
 
-  background-color: ${({ theme }) => theme.colors.successLight};
+  background-color: ${({ color, theme }) => theme.colors[color!]};
   border: none;
   border-radius: ${({ theme }) => theme.borders.radius.md};
   outline: none;
@@ -20,7 +21,7 @@ export const ButtonStyled = styled.button<ButtonStyledProps>`
   transition: background-color 0.3s ease, transform 0.2s ease;
 
   &:hover {
-    background-color:rgb(46, 178, 110);
+    background-color: ${({ color, theme }) => darken(0.1, theme.colors[color!].toString())};
   }
 
   &:active {

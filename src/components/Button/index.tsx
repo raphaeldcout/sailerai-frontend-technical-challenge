@@ -8,6 +8,7 @@ import { Props } from './types';
 
 export const Button: FC<Props> = ({
   animated = false,
+  color = 'successLight',
   disabled,
   iconLeft,
   iconRight,
@@ -17,6 +18,7 @@ export const Button: FC<Props> = ({
   responsiveMode = false,
 }) => (
   <ButtonStyled
+    color={color}
     disabled={disabled}
     animated={animated}
     responsiveMode={responsiveMode}

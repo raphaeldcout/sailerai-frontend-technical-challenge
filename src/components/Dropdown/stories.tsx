@@ -1,15 +1,27 @@
 import { Flexbox } from '@/utils/storybook/styles';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { AudioPlayer } from '.';
+import { Dropdown } from '.';
+import { Avatar } from '../Avatar';
+import { DropdownMenuItem, RightSlot } from './style';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Components/AudioPlayer',
+  title: 'Components/Dropdown',
   component: (args) => {
     return (
       <Flexbox>
-        <AudioPlayer {...args} />
+        <Dropdown {...args}>
+          <DropdownMenuItem>
+            Meus dados <RightSlot>⌘+T</RightSlot>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            Integrações <RightSlot>⌘+N</RightSlot>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            Configurações <RightSlot>⇧+⌘+N</RightSlot>
+          </DropdownMenuItem>
+        </Dropdown>
       </Flexbox>
     );
   },
@@ -19,7 +31,7 @@ const meta = {
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
-} satisfies Meta<typeof AudioPlayer>;
+} satisfies Meta<typeof Dropdown>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -27,7 +39,6 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Principal: Story = {
   args: {
-    minWidth: 300,
-    src: 'https://cdn.pixabay.com/audio/2021/08/09/audio_2f331550f9.mp3',
+    elementTrigger: <Avatar src="/image-profile-1.png" clickable />,
   },
 };

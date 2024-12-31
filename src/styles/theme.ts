@@ -4,29 +4,24 @@ const theme = {
         primaryLight: '#788AA3',
         primaryDark: '#212121',
         primaryMedium: '#11283a',
-
         secondary: '#38b3ff',
         background: '#1f1f22',
         surface: '#f5f5f5',
         error: '#d32f2f',
-
         success: '#388e3c',
         successLight: '#2DD881',
-        
         warning: '#fbc02d',
-
         border: '#e0e0e0',
-
         light: '#ffffff',
-
         neutralLowLight: '#b0d4ee',
         neutralLowMedium: '#f1f1f1',
         neutralLowDark: '#c4c4c4',
-
         neutralMediumLight: '#6c757d',
         neutralMedium: '#495057',
-
-        greenLowLight: '#dcf6c6'
+        greenLowLight: '#dcf6c6',
+        rbg: {
+            greenLowMedium: 'rgb(46, 178, 110)'
+        }
     },
     darkMode: {
         foregroundRgb: '255, 255, 255',
@@ -80,7 +75,7 @@ const theme = {
     shadows: {
         sm: '0px 1px 3px rgba(0, 0, 0, 0.12)',
         md: '0px 3px 6px rgba(0, 0, 0, 0.16)',
-        lg: '0px 10px 20px rgba(0, 0, 0, 0.2)',
+        lg: '0px 10px 20px rgba(0, 0, 0, 0.2)'
     },
     zIndex: {
         dropdown: 1000,

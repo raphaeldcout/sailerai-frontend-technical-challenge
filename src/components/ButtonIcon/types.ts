@@ -1,5 +1,9 @@
 import { ButtonHTMLAttributes, PropsWithChildren } from 'react';
 
-export interface OwnProps extends PropsWithChildren, ButtonHTMLAttributes<HTMLButtonElement> {};
+import { ColorsType } from '@/styles/theme';
+
+export interface OwnProps extends PropsWithChildren, ButtonHTMLAttributes<HTMLButtonElement> {
+    backgrounColor?: ColorsType;
+};
 
 export type Props = OwnProps;

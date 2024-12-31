@@ -1,15 +1,16 @@
 import { Flexbox } from '@/utils/storybook/styles';
 import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 
-import { AudioPlayer } from '.';
+import { TextInput } from '.';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Components/AudioPlayer',
+  title: 'Components/TextInput',
   component: (args) => {
     return (
-      <Flexbox>
-        <AudioPlayer {...args} />
+      <Flexbox minWidth={800}>
+        <TextInput {...args} />
       </Flexbox>
     );
   },
@@ -19,7 +20,7 @@ const meta = {
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
-} satisfies Meta<typeof AudioPlayer>;
+} satisfies Meta<typeof TextInput>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -27,7 +28,9 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Principal: Story = {
   args: {
-    minWidth: 300,
-    src: 'https://cdn.pixabay.com/audio/2021/08/09/audio_2f331550f9.mp3',
+    id: 'input',
+    label: 'Name',
+    value: '',
+    onChange: fn(),
   },
 };

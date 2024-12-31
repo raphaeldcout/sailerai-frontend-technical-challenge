@@ -1,17 +1,34 @@
 import { Flexbox } from '@/utils/storybook/styles';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { AudioPlayer } from '.';
+import { Badge } from '.';
+import { BadgeColors, VariantSizes } from './type';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Components/AudioPlayer',
+  title: 'Components/Badge',
   component: (args) => {
     return (
       <Flexbox>
-        <AudioPlayer {...args} />
+        <Badge {...args} />
       </Flexbox>
     );
+  },
+  argTypes: {
+    color: {
+      control: { type: 'select' },
+      options: BadgeColors,
+      table: {
+        type: { summary: 'BadgeColor' },
+      },
+    },
+    variant: {
+      control: { type: 'select' },
+      options: VariantSizes,
+      table: {
+        type: { summary: 'VariantSize' },
+      },
+    },
   },
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
@@ -19,7 +36,7 @@ const meta = {
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
-} satisfies Meta<typeof AudioPlayer>;
+} satisfies Meta<typeof Badge>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -27,7 +44,7 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Principal: Story = {
   args: {
-    minWidth: 300,
-    src: 'https://cdn.pixabay.com/audio/2021/08/09/audio_2f331550f9.mp3',
+    color: 'positive',
+    variant: 'medium',
   },
 };
