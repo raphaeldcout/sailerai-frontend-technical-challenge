@@ -1,8 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { fadeIn } from '@/styles/keyframes';
 
-export const Root = styled.article`
+import { Props } from './types';
+
+export const Root = styled.article<Props>`
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -15,7 +17,9 @@ export const Root = styled.article`
     margin: ${({ theme }) => theme.spacings.lg};
     padding: ${({ theme }) => theme.spacings.lg};
 
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.small}px) {
-        display: none;
-    }
+    ${({ responsiveMode }) => responsiveMode && css`
+        @media screen and (min-width: ${({ theme }) => theme.breakpoints.small}px) {
+            display: none;
+        }
+    `}
 `;

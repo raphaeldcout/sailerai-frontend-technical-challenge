@@ -96,6 +96,8 @@ const theme = {
     }
 };
 
+export const colors = theme.colors;
+
 export type Theme = typeof theme;
 
 export type ColorsType = keyof Theme['colors'];
