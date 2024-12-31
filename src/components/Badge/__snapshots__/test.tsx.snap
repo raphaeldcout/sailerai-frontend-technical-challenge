@@ -3,9 +3,9 @@
 exports[`Badge should match snapshot 1`] = `
 <div>
   <span
-    class="sc-92904615-0 hLxQWu"
-    color="positive"
-    variant="medium"
+    class="sc-92904615-0 iIheIa"
+    color="warning"
+    variant="large"
   />
 </div>
 `;

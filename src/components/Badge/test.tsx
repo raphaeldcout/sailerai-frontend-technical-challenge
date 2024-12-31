@@ -6,7 +6,7 @@ import { Badge } from '.';
 
 describe('Badge', () => {
   test('should match snapshot', () => {
-    const { container } = render(<Badge />);
+    const { container } = render(<Badge color='warning' variant='large' />);
 
     expect(container).toMatchSnapshot();
   });
