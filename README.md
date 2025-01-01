@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Chat Frontend Technical Challenge
 
-## Getting Started
+This is a real-time chat project developed in [Next JS](https://nextjs.org/docs/13/getting-started), using advanced tools such as `Typescript`, `Styled-components`, `Modular Components`, `Storybook` and `Jest` to support a good project architecture. Development principles such as `Clean Code` and `SOLID` were also used.
 
-First, run the development server:
+![Logo](https://raw.githubusercontent.com/raphaeldcout/sailerai-frontend-technical-challenge/master/public/frontend-chat.png)
 
+## Minimum requirements to run project
+
+- Node JS 18.0.x
+- npm >= 10.5.0
+- Backend project running at:
+    - API: http://localhost:8000/
+    - WS: ws://localhost:8000/ws/
+- Clone this repository:
+    ```bash
+    git clone <repository-url>
+    cd <repository-folder>
+    ```
+
+## Build and Run
+1. Installing dependencies
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+```
+
+2. Building app
+```bash
+npm run build
+```
+
+3. starting app
+```bash
+npm run start
+```
+
+4. (optional) running tests
+```bash
+npm run test
+```
+
+5. (optional) running **Storybook** documentation
+```bash
+npm run storybook
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Going beyond, ensuring quality
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To guarantee the quality of the components developed, unit tests were inserted:
 
-## Learn More
+![frontend-chat-coverage](https://raw.githubusercontent.com/raphaeldcout/sailerai-frontend-technical-challenge/master/public/frontend-chat-coverage.png)
 
-To learn more about Next.js, take a look at the following resources:
+To ensure quality in the visual documentation, the storybook tool was inserted:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![frontend-chat-storybook.png](https://raw.githubusercontent.com/raphaeldcout/sailerai-frontend-technical-challenge/master/public/frontend-chat-storybook.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Sailer AI Frontend Technical Challenge ©
