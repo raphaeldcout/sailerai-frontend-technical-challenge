@@ -1,6 +1,6 @@
 # Chat Frontend Technical Challenge
 
-This is a real-time chat project developed in [Next JS](https://nextjs.org/docs/13/getting-started), using advanced tools such as `Typescript`, `Styled-components`, `Modular Components`, `Storybook` and `Jest` to support a good project architecture. Development principles such as `Clean Code` and `SOLID` were also used.
+This is a real-time chat project developed in [Next JS](https://nextjs.org/docs/13/getting-started), using advanced tools such as `Typescript`, `Styled-components`, `Modular Components`, `Storybook`, `Jest`, `testing-library` and `Eslint` to support a good project architecture. Development principles such as `Clean Code` and `SOLID` were also used.
 
 ![Logo](https://raw.githubusercontent.com/raphaeldcout/sailerai-frontend-technical-challenge/master/public/frontend-chat.png)
 
