@@ -28,17 +28,17 @@ npm install
 npm run build
 ```
 
-3. starting app
+3. Starting app
 ```bash
 npm run start
 ```
 
-4. (optional) running tests
+4. (optional) Running tests
 ```bash
 npm run test
 ```
 
-5. (optional) running **Storybook** documentation
+5. (optional) Running **Storybook** documentation
 ```bash
 npm run storybook
 ```
