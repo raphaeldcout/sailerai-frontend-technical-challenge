@@ -25,8 +25,11 @@ export const Section = styled.div`
 
 export const SectionButton = styled.div`
     width: 100%;
-    padding: ${({ theme }) => `${theme.spacings.sm} ${theme.spacings.md}`} ;
- 
+    padding: ${({ theme }) => `${theme.spacings.sm} ${theme.spacings.md}`};
+    
+    button {
+        width: 100%;
+    }
 `;
 
 export const SectionTitle = styled.div<RootProps>`
